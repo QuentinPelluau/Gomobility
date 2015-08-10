@@ -28,3 +28,33 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom post type  
   
 */
+
+## vhost
+
+/windows/system32/drivers/etc/hosts
+
+Activer sous windows pour Apache2 l'option vhosts
+
+- Virtual hosts dans le fichier httpd.conf du serveur
+on décommmente la ligne suivante dans ce fichier:
+
+Include conf/extra/httpd-vhosts.conf
+
+- Mettre ces deux blocs dans le fichier httpd-vhosts.conf
+
+<VirtualHost *:80>  
+    ServerAdmin webmaster@localhost  
+    DocumentRoot "c:/wamp/www"  
+    ServerName localhost  
+    #ErrorLog "logs/localhost-error.log"  
+    #CustomLog "logs/localhost-access.log" common  
+</VirtualHost>  
+  
+<VirtualHost *:80>  
+    DocumentRoot "c:/wamp/www/gomobility"  
+    ServerName gomobility.local 
+    <directory "c:/wamp/www/gomobility">  
+        Options Indexes FollowSymLinks  
+        AllowOverride all  
+    </directory>  
+</VirtualHost>  
