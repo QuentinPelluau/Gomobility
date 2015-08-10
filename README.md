@@ -62,3 +62,34 @@ Include conf/extra/httpd-vhosts.conf
 </VirtualHost>  
 
 ```
+
+### Codex la documentation officiel
+
+https://codex.wordpress.org/Function_Reference/[NameFunction]
+
+
+### the_loop
+
+Elle affiche les posts (les 10 derniers max configuration CMS) de manière contextuelle.
+
+http://gomobility.local/?p=1   le contexte p pour post et 1 l'ID du post  
+Le contexte est passé à la boucle, la boucle fait une requête sur les posts 
+La boucle affichera par exemple pour le contexte ci-dessus, le post dont l'ID est 1
+
+Le contexte de la page d'accueil: "/" 
+
+Plaçons dans le fichier index.php la boucle suivante:
+
+```php
+
+<?php if(have_posts()): ?>
+<ul>
+	<?php while(have_posts()): the_post(); ?>
+		<li><?php the_title(); ?></li>
+	<?php endwhile; ?>
+</ul>
+<?php endif; ?>	
+
+
+
+```
