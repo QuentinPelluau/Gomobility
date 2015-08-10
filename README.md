@@ -88,8 +88,8 @@ Plaçons dans le fichier index.php la boucle suivante:
 		<li><?php the_title(); ?></li>
 	<?php endwhile; ?>
 </ul>
-<?php endif; ?>	
-
-
+<?php else: ?>	
+<p>Désolé pas d'article pour l'instant...</p>
+<?php endif; ?>
 
 ```
