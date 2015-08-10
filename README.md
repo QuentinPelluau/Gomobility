@@ -42,6 +42,7 @@ Include conf/extra/httpd-vhosts.conf
 
 - Mettre ces deux blocs dans le fichier httpd-vhosts.conf
 
+```code
 <VirtualHost *:80>  
     ServerAdmin webmaster@localhost  
     DocumentRoot "c:/wamp/www"  
@@ -58,3 +59,5 @@ Include conf/extra/httpd-vhosts.conf
         AllowOverride all  
     </directory>  
 </VirtualHost>  
+
+```
