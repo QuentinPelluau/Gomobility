@@ -17,14 +17,14 @@
 - mettez les tags suivants dans le fichier style.css, ces commentaires déclarent le thème "gomobility" à WP (fichier de conf)
 
 /*
-Theme Name: gomobility
-Theme URI: http://gomobility.local
-Author: Antoine
-Author URI:http://gomobility.local/contact
-Description: Website for teaching
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: custom post type
-
+Theme Name: gomobility  
+Theme URI: http://gomobility.local  
+Author: Antoine  
+Author URI:http://gomobility.local/contact  
+Description: Website for teaching  
+Version: 1.0  
+License: GNU General Public License v2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+Tags: custom post type  
+  
 */
