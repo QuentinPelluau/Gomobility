@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="main-container">
     <div class="main wrapper clearfix">
-       <?php get_template_part('loop', 'excerpt'); ?>
+        <?php get_template_part('loop'); ?>
         <aside>
             <?php get_sidebar(); ?>
         </aside>

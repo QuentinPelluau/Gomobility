@@ -83,13 +83,36 @@ Plaçons dans le fichier index.php la boucle suivante:
 ```php
 
 <?php if(have_posts()): ?>
-<ul>
-	<?php while(have_posts()): the_post(); ?>
-		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-	<?php endwhile; ?>
-</ul>
-<?php else: ?>	
-<p>Désolé pas d'article pour l'instant...</p>
+<div class="post">
+    <?php while(have_posts()): the_post(); ?>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <p><?php the_excerpt(); ?></p>
+        <?php the_category(); ?>
+    <?php endwhile; ?>
+</div>
+<?php else: ?>
+    <p>Désolé pas d'article pour l'instant...</p>
 <?php endif; ?>
+
+```
+
+### template hierarchy
+
+Wp regarde si vous avez créer un template qui rentre dans sa template hierarchy et sinon, si il n'existe pas de template spécifique à votre contenu au final il utilise index.php 
+
+- exemple
+what page ?
+par exemple  ?cat=X 
+ ---> category-[ID or slug].php  ? --> category.php ? --> archive.php ? --> index.php
+
+
+ ### template 
+
+ - découpage des templates on utilise classiquement:
+
+```php
+ get_header();
+ get_footer();
+ get_sidebar();
 
 ```
