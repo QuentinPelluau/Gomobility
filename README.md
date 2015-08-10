@@ -57,6 +57,7 @@ Include conf/extra/httpd-vhosts.conf
     <directory "c:/wamp/www/gomobility">  
         Options Indexes FollowSymLinks  
         AllowOverride all  
+        Require all granted  
     </directory>  
 </VirtualHost>  
 
