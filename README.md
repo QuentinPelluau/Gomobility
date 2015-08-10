@@ -10,7 +10,9 @@
 
 ## Création d'un thème
 
-- créer deux fichiers index.php et style.css
+- créer un dossier "gomobility" dans le dossier des thèmes de WP (wp-content/themes)
+
+- créer deux fichiers dans le dossier "gomobility" index.php et style.css
 
 - mettez les tags suivants dans le fichier style.css, ces commentaires déclarent le thème "gomobility" à WP (fichier de conf)
 
