@@ -116,3 +116,18 @@ par exemple  ?cat=X
  get_sidebar();
 
 ```
+### Templates
+
+Exercice
+
+1/ publier des articles pour l'admin et l'éditeur (utilisateurs)
+
+2/ créer le template pour les auteurs et afficher ses articles
+
+Dans la boucle le lien vers la page des auteurs est
+
+<?php the_author_posts_link() ?>
+
+3/ Mots clefs
+
+<?php the_tags() ; ?>
