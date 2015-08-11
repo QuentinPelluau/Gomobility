@@ -5,6 +5,7 @@
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             <p><?php the_excerpt(); ?></p>
             <?php the_category(); ?>
+            <?php the_tags('<ul class="tags" >mot(s) clef(s):<li>','</li><li>','</li></ul>'); ?>
             <?php the_author_posts_link(); ?>
         </section>
     <?php endwhile; ?>

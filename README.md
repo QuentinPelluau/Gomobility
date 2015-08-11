@@ -131,3 +131,27 @@ Dans la boucle le lien vers la page des auteurs est
 3/ Mots clefs
 
 <?php the_tags() ; ?>
+
+### functions et hook action/filter
+
+Un hook permet de modifier ou étendre les fonctionnalités de WP.
+WP possède un nombre important de hooks dans son code, ce qui signifie que l'on peut
+modifier ou étendre beaucoup d'actions dans le CMS.
+
+Il existe des hooks d'action et de filter
+
+### Hook filter read more example
+
+```php
+add_filter('excerpt_more', 'al_read_more');
+
+function al_read_more($more)
+{
+    global $post; // le post dans la boucle objet
+
+//    var_dump($post);  // objet dans la boucle de WP
+
+    return '<p><a href="' . get_permalink($post->ID) . '" >lire la suite</a></p>';
+}
+
+```

@@ -11,19 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/normalize.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
-
-    <script src="<?php bloginfo('template_url'); ?>/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <?php wp_head(); ?>
 </head>
-<body>
+<body class="bike author category">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class="header-container">
     <header class="wrapper clearfix">
-        <h1 class="title">h1.title</h1>
+        <h1 class="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
         <nav>
             <ul>
                 <li><a href="#">nav ul li a</a></li>
