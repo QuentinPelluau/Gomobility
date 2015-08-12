@@ -163,3 +163,23 @@ Un fichier pour configurer des options = CMS plus léger.
 
 Il faudra une fois le menu définit dans l'admin ajouter du code dans le template pour faire
 le lien avec ce menu.
+
+### API des Widgets
+Voir le fichier functions.php widgets_init et dans les fichiers siderbar.php et footer.php
+
+### Thumbnail voir le code source loop-excerpt et fichier functions.php hook after_setup_theme
+
+### Modele de page
+
+On peut avoir besoin du modèle de page pour avoir un template spécifique pour une ou des pages données.
+Ou pour mettre du code PHP dans une page.
+
+Pour créer un modèle de page on crée un fichier, le nom vous êtes libre, dans le thème, par exemple mentions.php
+
+```php
+
+/*
+ * Template Name: mentions
+ */
+
+ ```

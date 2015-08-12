@@ -4,6 +4,9 @@
             'theme_location' => 'footer',
             'menu_class'     => 'menu-footer'
         ]); ?>
+        <?php if (is_active_sidebar('al_widget_sidebar_footer')) : ?>
+            <?php dynamic_sidebar('al_widget_sidebar_footer'); ?>
+        <?php endif; ?>
     </footer>
 </div>
 <?php wp_footer(); ?>
