@@ -155,3 +155,8 @@ function al_read_more($more)
 }
 
 ```
+
+### Menu API
+
+On passe par le fichier functions.php pour activer l'option API menu dans le CMS.
+Un fichier pour configurer des options = CMS plus léger.

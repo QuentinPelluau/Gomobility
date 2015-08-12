@@ -1,7 +1,7 @@
 <?php
 /*
  * @author: Antoine
- * @tags: @tests @scripts @filter
+ * @tags: @tests @scripts @filter @theme
  */
 
 /* ------------------------------------------------- *\
@@ -49,4 +49,18 @@ function al_read_more($more)
 //    var_dump($post);  // objet dans la boucle de WP
 
     return '<p><a href="' . get_permalink($post->ID) . '" >lire la suite</a></p>';
+}
+
+/* ------------------------------------------------- *\
+    @theme  options dans le CMS
+\* ------------------------------------------------- */
+
+add_action('after_setup_theme', 'al_setup_theme');
+
+function al_setup_theme()
+{
+    register_nav_menus([
+        'main' => 'Mon menu principal',
+        'footer' => 'Mon footer',
+    ]);
 }
