@@ -66,6 +66,7 @@ function al_setup_theme()
     ]);
 
     add_theme_support('post-thumbnails');
+    add_theme_support('post-formats', ['aside', 'gallery', 'video']);
 }
 
 /* ------------------------------------------------- *\
@@ -79,7 +80,7 @@ function al_setup_widgets()
     register_sidebar([
         'name'          => 'Notre widget Sidebar',
         'id'            => 'al_widget_sidebar',
-        'class'        => 'al_widget_class',
+        'class'         => 'al_widget_class',
         'description'   => 'widget sidebar gen',
         'before_widget' => '<div class="widget_%2$s clearfix">', // %2$s le nom du widget
         'after_widget'  => '</div>',
@@ -90,7 +91,7 @@ function al_setup_widgets()
     register_sidebar([
         'name'          => 'Notre widget footer',
         'id'            => 'al_widget_sidebar_footer',
-        'class'        => 'al_widget_class',
+        'class'         => 'al_widget_class',
         'description'   => 'widget footer gen',
         'before_widget' => '<div class="widget_%2$s clearfix">',
         'after_widget'  => '</div>',

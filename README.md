@@ -183,3 +183,28 @@ Pour créer un modèle de page on crée un fichier, le nom vous êtes libre, dan
  */
 
  ```
+
+ ### Exercice post-format
+
+ Dans le site Gomobility on souhaite mettre de la vidéo dans certains articles. Ces vidéos n'apparaissent
+ pas dans la boucle où s'affiche l'extrait. On aimerait mettre un style ou icone pour spécifié à l'internaute
+ que ces articles possèdent une vidéo.
+
+ ```php
+ // dans le hook after_setup_theme
+
+  add_theme_support('post-formats', ['aside', 'gallery', 'video']);
+
+ ```
+
+ Taguer plusieurs articles avec le post-format "video".
+ Dans la boucle il faut tester si l'article possède ce post-format, et styliser l'article si il existe.
+
+ rmq utiliser la fonction suivante:
+
+ ```php
+ has_post_format('video')
+  ```
+
+  Pour continuer dans l'esprit vous pouvez voir les articles "sticky"  (article mis en avant)
+   et essayer également de styliser ces articles.
