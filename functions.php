@@ -1,7 +1,7 @@
 <?php
 /*
  * @author: Antoine
- * @tags: @tests @scripts @filter @theme
+ * @tags: @tests @scripts @filters @theme @widgets
  */
 
 /* ------------------------------------------------- *\
@@ -37,7 +37,7 @@ function al_setup_script()
 }
 
 /* ------------------------------------------------- *\
-    @filter
+    @filters
 \* ------------------------------------------------- */
 
 add_filter('excerpt_more', 'al_read_more');
@@ -60,8 +60,41 @@ add_action('after_setup_theme', 'al_setup_theme');
 function al_setup_theme()
 {
     register_nav_menus([
-        'main' => 'Mon menu principal',
-        'footer' => 'Mon menu footer',
+        'main'    => 'Mon menu principal',
+        'footer'  => 'Mon menu footer',
         'sidebar' => 'Menu dans la sidebar'
+    ]);
+
+    add_theme_support('post-thumbnails');
+}
+
+/* ------------------------------------------------- *\
+    @widgets
+\* ------------------------------------------------- */
+
+add_action('widgets_init', 'al_setup_widgets');
+
+function al_setup_widgets()
+{
+    register_sidebar([
+        'name'          => 'Notre widget Sidebar',
+        'id'            => 'al_widget_sidebar',
+        'class'        => 'al_widget_class',
+        'description'   => 'widget sidebar gen',
+        'before_widget' => '<div class="widget_%2$s clearfix">', // %2$s le nom du widget
+        'after_widget'  => '</div>',
+        'before_title'  => '<h1 class="widget_title" >',
+        'after_title'   => '</h1>'
+    ]);
+
+    register_sidebar([
+        'name'          => 'Notre widget footer',
+        'id'            => 'al_widget_sidebar_footer',
+        'class'        => 'al_widget_class',
+        'description'   => 'widget footer gen',
+        'before_widget' => '<div class="widget_%2$s clearfix">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h1 class="widget_title" >',
+        'after_title'   => '</h1>'
     ]);
 }
