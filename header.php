@@ -22,7 +22,7 @@
         <h1 class="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
             <?php wp_nav_menu([
                 'theme_location' => 'main',
-                'container' => 'nav',
+                'container' => 'nav', // wrapper nav
                 'container_class' =>'nav-main nav-collapse'
             ]); ?>
     </header>
