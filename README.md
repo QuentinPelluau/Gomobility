@@ -187,7 +187,7 @@ Pour créer un modèle de page on crée un fichier, le nom vous êtes libre, dan
 ### Exercice post-format
 
  Dans le site Gomobility on souhaite mettre de la vidéo dans certains articles. Ces vidéos n'apparaissent
- pas dans la boucle où s'affiche l'extrait. On aimerait mettre un style ou icone pour spécifié à l'internaute
+ pas dans la boucle où s'affiche l'extrait. On aimerait mettre un style ou icone pour spécifier à l'internaute
  que ces articles possèdent une vidéo.
 
  ```php
