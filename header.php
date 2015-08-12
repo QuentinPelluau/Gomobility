@@ -20,12 +20,10 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <h1 class="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-        <nav>
-            <ul>
-                <li><a href="#">nav ul li a</a></li>
-                <li><a href="#">nav ul li a</a></li>
-                <li><a href="#">nav ul li a</a></li>
-            </ul>
-        </nav>
+            <?php wp_nav_menu([
+                'theme_location' => 'main',
+                'container' => 'nav',
+                'container_class' =>'nav-main nav-collapse'
+            ]); ?>
     </header>
 </div>

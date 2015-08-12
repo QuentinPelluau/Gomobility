@@ -61,6 +61,6 @@ function al_setup_theme()
 {
     register_nav_menus([
         'main' => 'Mon menu principal',
-        'footer' => 'Mon footer',
+        'footer' => 'Mon menu footer',
     ]);
 }
