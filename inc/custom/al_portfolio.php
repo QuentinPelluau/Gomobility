@@ -22,6 +22,7 @@ function  al_create_portfolio_custom()
         'labels' => $labels,
         'public' => true,
         'show_in_menu' => true, // tools bar
+        'show_in_nav_menus',
         'exclude_from_search' => false, //
         'rewrite' => true,
         'has_archive' => 'portfolios',
