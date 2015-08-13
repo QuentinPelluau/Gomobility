@@ -17,7 +17,7 @@
                     echo '<li>';
                     echo wp_get_attachment_image($attachment->ID, 'thumbnail');
                     echo '</li>';
-                    echo '<span class="attachment__title">' . $attachment->title . '
+                    echo '<span class="attachment__title">' . $attachment->post_title . '
                     </span>';
                 }
                 echo '</ul>';
