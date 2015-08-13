@@ -99,3 +99,43 @@ function al_setup_widgets()
         'after_title'   => '</h1>'
     ]);
 }
+
+/* ------------------------------------------------- *\
+    @options  http://www.sitepoint.com/wordpress-options-panel/
+\* ------------------------------------------------- */
+
+add_action('admin_menu', 'al_create_theme_options_page');
+function al_create_theme_options_page()
+{
+    add_options_page('Theme Options', 'Theme Options', 'administrator', __FILE__, 'al_build_options_page');
+}
+
+function al_build_options_page()
+{ ?>
+    <div id="theme-options-wrap">
+    <div class="icon32" id="icon-tools"><br/></div>
+    <h2>My Theme Options</h2>
+
+    <p>Take control of your theme, by overriding the default settings with your own specific preferences.</p>
+
+    <form method="post" action="options.php"><p class="submit">
+
+        <p>
+            <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>"/>
+        </p>
+    </form>  </div><?php
+}
+
+add_action('admin_init', 'al_register_and_build_fields');
+
+function al_register_and_build_fields()
+{
+    register_setting('plugin_options', 'plugin_options', 'al_validate_setting');
+}
+
+function al_validate_setting($plugin_options)
+{
+    return $plugin_options;
+}
+
+//add_settings_field('banner_heading', 'Banner Heading:', 'banner_heading_setting', __FILE__, 'main_section');
