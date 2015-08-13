@@ -1,0 +1,2 @@
+Pour toutes les taxonomies
+

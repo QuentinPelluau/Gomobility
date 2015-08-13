@@ -68,6 +68,14 @@ function al_setup_theme()
 
     add_theme_support('post-thumbnails');
     add_theme_support('post-formats', ['aside', 'gallery', 'video']);
+    $default = [
+        'flex-width'    => true,
+        'width'         => 980,
+        'flex-height'   => true,
+        'height'        => 200,
+        'default-image' => get_template_directory_uri() . '/images/headers/circle.png',
+    ];
+    add_theme_support('custom-header', $default);
 }
 
 /* ------------------------------------------------- *\
@@ -106,50 +114,9 @@ function al_setup_widgets()
 \* ------------------------------------------------- */
 
 require_once TEMPLATEPATH . '/inc/tax/al_country.php';
+require_once TEMPLATEPATH . '/inc/tax/al_genre.php';
 
 
 /* ------------------------------------------------- *\
     @plugins  http://www.sitepoint.com/wordpress-options-panel/
 \* ------------------------------------------------- */
-
-add_action('admin_menu', 'al_create_theme_options_page');
-function al_create_theme_options_page()
-{
-    add_options_page('Theme Options', 'Theme Options', 'administrator', __FILE__, 'al_build_options_page');
-}
-
-function al_build_options_page()
-{ ?>
-    <div id="theme-options-wrap">
-    <div class="icon32" id="icon-tools"><br/></div>
-    <h2>My Theme Options</h2>
-
-    <p>Take control of your theme, by overriding the default settings with your own specific preferences.</p>
-
-    <form method="post" action="options.php"><p class="submit">
-
-        <p>
-            <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>"/>
-        </p>
-    </form>  </div><?php
-}
-
-add_action('admin_init', 'al_register_and_build_fields');
-
-function al_register_and_build_fields()
-{
-    register_setting('plugin_options', 'plugin_options', 'al_validate_setting');
-}
-
-function al_validate_setting($plugin_options)
-{
-    return $plugin_options;
-}
-
-//add_settings_field('banner_heading', 'Banner Heading:', 'al_banner_heading_setting', __FILE__, 'main_section');
-//
-//function al_banner_heading_setting()
-//{
-//    $options = get_option('plugin_options');
-//    echo "<input name='plugin_options[banner_heading]' type='text' value='{$options['banner_heading']}' />";
-//}
