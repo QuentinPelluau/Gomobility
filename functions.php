@@ -4,6 +4,8 @@
  * @tags: @tests @scripts @filters @theme @widgets
  */
 
+define('AL_THEME_NAME', 'gomobility3');
+
 /* ------------------------------------------------- *\
     @tests
 \* ------------------------------------------------- */
@@ -99,6 +101,13 @@ function al_setup_widgets()
         'after_title'   => '</h1>'
     ]);
 }
+
+/* ------------------------------------------------- *\
+    @tax
+\* ------------------------------------------------- */
+
+require_once ABSPATH . '/wp-content/themes/' . AL_THEME_NAME . '/inc/tax/al_country.php';
+
 
 /* ------------------------------------------------- *\
     @options  http://www.sitepoint.com/wordpress-options-panel/

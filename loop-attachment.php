@@ -1,6 +1,6 @@
 <?php if (have_posts()): ?>
     <?php while (have_posts()): the_post(); ?>
-        <article>
+        <article class="clearfix">
             <h1><?php the_title(); ?></h1>
             <?php
             $args = [
@@ -14,9 +14,9 @@
             if ($attachments) {
                 echo '<ul class="attachment">';
                 foreach ($attachments as $attachment) {
-                    echo '<li>';
+                    echo '<li><a href="'.wp_get_attachment_url($attachment->ID).'">';
                     echo wp_get_attachment_image($attachment->ID, 'thumbnail');
-                    echo '</li>';
+                    echo '</a></li>';
                     echo '<span class="attachment__title">' . $attachment->post_title . '
                     </span>';
                 }
