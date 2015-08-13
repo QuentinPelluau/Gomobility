@@ -16,14 +16,6 @@
     <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/apple-touch-icon.png">
 
     <?php wp_head(); ?>
-
-    <?php if (is_singular('portfolio')): ; ?>
-        <style>
-            .portfolio {
-                background-color: green;
-            }
-        </style>
-    <?php endif; ?>
 </head>
 <body class="bike author category portfolio">
 <!--[if lt IE 8]>
@@ -33,10 +25,5 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <h1 class="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-        <?php wp_nav_menu([
-            'theme_location'  => 'main',
-            'container'       => 'nav', // wrapper nav
-            'container_class' => 'nav-main nav-collapse'
-        ]); ?>
     </header>
 </div>

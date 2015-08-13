@@ -1,7 +1,7 @@
 <?php
 /*
  * @author: Antoine
- * @tags: @tests @scripts @filters @theme @widgets
+ * @tags: @tests @scripts @filters @theme @widgets @taxonomy @custom
  */
 
 
@@ -115,6 +115,13 @@ function al_setup_widgets()
 
 require_once TEMPLATEPATH . '/inc/tax/al_country.php';
 require_once TEMPLATEPATH . '/inc/tax/al_genre.php';
+
+
+/* ------------------------------------------------- *\
+    @custom
+\* ------------------------------------------------- */
+
+require_once TEMPLATEPATH . '/inc/custom/al_portfolio.php';
 
 
 /* ------------------------------------------------- *\
