@@ -4,7 +4,6 @@
  * @tags: @tests @scripts @filters @theme @widgets
  */
 
-define('AL_THEME_NAME', 'gomobility3');
 
 /* ------------------------------------------------- *\
     @tests
@@ -106,11 +105,11 @@ function al_setup_widgets()
     @tax
 \* ------------------------------------------------- */
 
-require_once ABSPATH . '/wp-content/themes/' . AL_THEME_NAME . '/inc/tax/al_country.php';
+require_once TEMPLATEPATH . '/inc/tax/al_country.php';
 
 
 /* ------------------------------------------------- *\
-    @options  http://www.sitepoint.com/wordpress-options-panel/
+    @plugins  http://www.sitepoint.com/wordpress-options-panel/
 \* ------------------------------------------------- */
 
 add_action('admin_menu', 'al_create_theme_options_page');
@@ -147,4 +146,10 @@ function al_validate_setting($plugin_options)
     return $plugin_options;
 }
 
-//add_settings_field('banner_heading', 'Banner Heading:', 'banner_heading_setting', __FILE__, 'main_section');
+//add_settings_field('banner_heading', 'Banner Heading:', 'al_banner_heading_setting', __FILE__, 'main_section');
+//
+//function al_banner_heading_setting()
+//{
+//    $options = get_option('plugin_options');
+//    echo "<input name='plugin_options[banner_heading]' type='text' value='{$options['banner_heading']}' />";
+//}
