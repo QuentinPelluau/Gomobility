@@ -4,16 +4,64 @@
  * @tags: @tests @scripts @filters @theme @widgets @taxonomy @custom
  */
 
-
 /* ------------------------------------------------- *\
-    @tests
+    @cms
 \* ------------------------------------------------- */
 
-//function al_test_hook( $post_ID ) {
-//
-//    die("publication d'un article ($post_ID)... ");
-//}
-//add_action( 'publish_post', 'al_test_hook' );
+require_once TEMPLATEPATH . '/inc/column/al_column.php';
+
+/* ------------------------------------------------- *\
+    @theme  options dans le CMS
+\* ------------------------------------------------- */
+
+add_action('after_setup_theme', 'al_setup_theme');
+
+function al_setup_theme()
+{
+    register_nav_menus([
+        'main'    => 'Mon menu principal',
+        'footer'  => 'Mon menu footer',
+        'sidebar' => 'Menu dans la sidebar'
+    ]);
+
+    add_theme_support('post-thumbnails');
+    add_image_size('thumbnail-column', 90, 90, true);
+
+    add_theme_support('post-formats', ['aside', 'gallery', 'video']);
+    $default = [
+        'flex-width'    => true,
+        'width'         => 980,
+        'flex-height'   => true,
+        'height'        => 200,
+        'default-image' => get_template_directory_uri() . '/images/headers/circle.png',
+    ];
+    add_theme_support('custom-header', $default);
+}
+
+/* ------------------------------------------------- *\
+    @login
+\* ------------------------------------------------- */
+
+
+add_action('login_enqueue_scripts', 'al_logo_login');
+
+function al_logo_login()
+{
+    // wp_enqueue_style ici avec un fichier css
+    ?>
+
+    <style>
+        body.login div#login h1 a{
+
+            background-image:url(<?php echo get_template_directory_uri()?>/assets/images/fenley.png);
+            padding-bottom:30px;
+        }
+        body{
+            background-color: #006505;
+        }
+    </style>
+
+<?php }
 
 /* ------------------------------------------------- *\
     @scripts
@@ -52,31 +100,6 @@ function al_read_more($more)
     return '<p><a href="' . get_permalink($post->ID) . '" >lire la suite</a></p>';
 }
 
-/* ------------------------------------------------- *\
-    @theme  options dans le CMS
-\* ------------------------------------------------- */
-
-add_action('after_setup_theme', 'al_setup_theme');
-
-function al_setup_theme()
-{
-    register_nav_menus([
-        'main'    => 'Mon menu principal',
-        'footer'  => 'Mon menu footer',
-        'sidebar' => 'Menu dans la sidebar'
-    ]);
-
-    add_theme_support('post-thumbnails');
-    add_theme_support('post-formats', ['aside', 'gallery', 'video']);
-    $default = [
-        'flex-width'    => true,
-        'width'         => 980,
-        'flex-height'   => true,
-        'height'        => 200,
-        'default-image' => get_template_directory_uri() . '/images/headers/circle.png',
-    ];
-    add_theme_support('custom-header', $default);
-}
 
 /* ------------------------------------------------- *\
     @widgets
@@ -163,9 +186,13 @@ function al_shortcode_portfolio($atts, $content = null)
     }
     wp_reset_postdata();
 
-    return "{$a['title']} et {$a['class']}";
-
 }
+
+/* ------------------------------------------------- *\
+    @meta box
+\* ------------------------------------------------- */
+
+require_once TEMPLATEPATH . '/inc/metabox/al_portfolio.php';
 
 /* ------------------------------------------------- *\
     @plugins  http://www.sitepoint.com/wordpress-options-panel/

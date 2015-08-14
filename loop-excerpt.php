@@ -12,8 +12,8 @@
                 <p><?php the_excerpt(); ?></p>
                 <?php the_category(); ?>
                 <?php the_tags('<ul class="post__tag" >mot(s) clef(s):<li>', '</li><li>', '</li></ul>'); ?>
-                <?php the_terms($post->ID, 'country','<ul class="post__tax" >pays:<li>', '</li><li>', '</li></ul>'); ?>
-                <?php the_terms($post->ID, 'genre','<ul class="post__tax" >pays:<li>', '</li><li>', '</li></ul>'); ?>
+                <?php the_terms($post->ID, 'country', '<ul class="post__tax" >pays:<li>', '</li><li>', '</li></ul>'); ?>
+                <?php the_terms($post->ID, 'genre', '<ul class="post__tax" >pays:<li>', '</li><li>', '</li></ul>'); ?>
                 <?php the_author_posts_link(); ?>
             </section>
         <?php endwhile; ?>

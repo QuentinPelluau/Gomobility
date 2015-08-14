@@ -12,13 +12,18 @@
                             </a>
                         <?php endif; ?>
                         <p><?php the_excerpt(); ?></p>
+                        <?php $meta = get_post_meta($post->ID, '_al_portfolio_meta', true);
+                        if (!empty($meta['subtitle']))
+                            echo '<h2>type: ' . $meta['subtitle'] . '</h2>';
+                        ?>
                     </section>
                 <?php endwhile; ?>
             </article>
         <?php else: ?>
             <p>Désolé pas de portfolio pour l'instant...</p>
         <?php endif; ?>
-    </div> <!-- #main -->
+    </div>
+    <!-- #main -->
 </div> <!-- #main-container -->
 <?php get_footer(); ?>
 
