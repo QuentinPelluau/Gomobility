@@ -15,7 +15,7 @@ function al_create_country_tax()
         'menu_name'     => 'Pays'
     ];
 
-    register_taxonomy('country', ['post'], [
+    register_taxonomy('country', ['post', 'portfolio'], [
         'hierarchical' => false,
         'public'       => true, // afficher dans l'admin...
         'labels'       => $labels,

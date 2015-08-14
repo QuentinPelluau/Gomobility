@@ -28,7 +28,7 @@ class al_Walker_nav_menu extends Walker
         if ($this->showArchive && self::$count == $this->pos) {
             $url = get_post_type_archive_link('portfolio');
             $title = 'Voir les portfolios';
-            $output .= $this->add($url, $currentClass, $title);
+            $output .= $this->add($url, $currentClass, $title); // refactor
         }
 
         $url = $item->url;

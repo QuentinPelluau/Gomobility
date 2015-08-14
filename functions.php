@@ -130,5 +130,43 @@ require_once TEMPLATEPATH . '/inc/custom/al_portfolio.php';
 require_once TEMPLATEPATH . '/inc/walker/al_Walker_nav_menu.php';
 
 /* ------------------------------------------------- *\
+    @shortcode
+\* ------------------------------------------------- */
+
+add_shortcode('portfolio', 'al_shortcode_portfolio');
+
+function al_shortcode_portfolio($atts, $content = null)
+{
+    $defaults = [
+        'country' => 'Islande',
+        'class'   => 'portfolio',
+    ];
+    $a = shortcode_atts($defaults, $atts);
+
+    $query = new WP_Query([
+        'post_type' => 'portfolio',
+        // todo with term country taxonomy
+    ]);
+
+    if ($query->have_posts()) {
+        echo '<ul>';
+        while ($query->have_posts()) {
+            $query->the_post(); ?>
+           <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+            <?php if (has_post_thumbnail()): ?>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                </a>
+            <?php endif; ?>
+       <?php }
+        echo '</ul>';
+    }
+    wp_reset_postdata();
+
+    return "{$a['title']} et {$a['class']}";
+
+}
+
+/* ------------------------------------------------- *\
     @plugins  http://www.sitepoint.com/wordpress-options-panel/
 \* ------------------------------------------------- */

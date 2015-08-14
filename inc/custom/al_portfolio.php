@@ -24,6 +24,7 @@ function  al_create_portfolio_custom()
         'show_in_menu' => true, // tools bar
         'show_in_nav_menus',
         'exclude_from_search' => false, //
+        'query_var' => true,
         'rewrite' => true,
         'has_archive' => 'portfolios',
         //'menu_icon' => get_template_directory_uri() . '/images/py.png',
