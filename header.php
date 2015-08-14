@@ -17,13 +17,6 @@
 
     <?php wp_head(); ?>
 
-    <?php if (is_singular('portfolio')): ; ?>
-        <style>
-            .portfolio {
-                background-color: green;
-            }
-        </style>
-    <?php endif; ?>
 </head>
 <body class="bike author category portfolio">
 <!--[if lt IE 8]>
@@ -36,7 +29,8 @@
         <?php wp_nav_menu([
             'theme_location'  => 'main',
             'container'       => 'nav', // wrapper nav
-            'container_class' => 'nav-main nav-collapse'
+            'container_class' => 'nav-main nav-collapse',
+            'walker' => new al_Walker_nav_menu
         ]); ?>
     </header>
 </div>

@@ -24,17 +24,17 @@ add_action('wp_enqueue_scripts', 'al_setup_script');
 function al_setup_script()
 {
 
-    wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.min.css');
+    wp_enqueue_style('normalize', get_template_directory_uri() . '/assets/css/normalize.min.css');
     // si le css dépends de normalize on le précise dans l'argument 3 :
-    wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', ['normalize']);
+    wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', ['normalize']);
 
     if (is_category(22))
-        wp_enqueue_style('bike', get_template_directory_uri() . '/css/bike-elec.css');
+        wp_enqueue_style('bike', get_template_directory_uri() . '/assets/css/bike-elec.css');
 
 
-    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js');
+    wp_enqueue_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js');
 
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', ['jquery'], false, true);
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], false, true);
 }
 
 /* ------------------------------------------------- *\
@@ -122,6 +122,8 @@ require_once TEMPLATEPATH . '/inc/tax/al_genre.php';
 \* ------------------------------------------------- */
 
 require_once TEMPLATEPATH . '/inc/custom/al_portfolio.php';
+require_once TEMPLATEPATH . '/inc/walker/al_Walker_nav_menu.php';
+
 
 
 /* ------------------------------------------------- *\
