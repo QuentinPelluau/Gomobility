@@ -30,7 +30,7 @@
             'theme_location'  => 'main',
             'container'       => 'nav', // wrapper nav
             'container_class' => 'nav-main nav-collapse',
-            'walker' => new al_Walker_nav_menu
+            'walker' => new al_Walker_nav_menu(2)
         ]); ?>
     </header>
 </div>

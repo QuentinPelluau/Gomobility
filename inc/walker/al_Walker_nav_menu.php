@@ -23,23 +23,23 @@ class al_Walker_nav_menu extends Walker
     {
 
         self::$count++;
+        $currentClass = ($item->object_id === get_the_ID()) ? ' class="current"' : '';
 
         if ($this->showArchive && self::$count == $this->pos) {
             $url = get_post_type_archive_link('portfolio');
-            $title = _e('Portfolio' , 'gomobility');
+            $title = 'Voir les portfolios';
             $output .= $this->add($url, $currentClass, $title);
         }
 
         $url = $item->url;
         $title = $item->title;
-        $currentClass = ($item->object_id === get_the_ID()) ? ' class="current"' : '';
 
         $output .= $this->add($url, $currentClass, $title);
     }
 
     private function add($url, $currentClass, $title)
     {
-        return sprintf("\n<li><a href='%s'%s>%s</a></li>\n",
+        return sprintf("\n<li class=\"nav\"><a href='%s'%s>%s</a></li>\n",
             $url,
             $currentClass,
             $title

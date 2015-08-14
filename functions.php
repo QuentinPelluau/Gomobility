@@ -122,9 +122,12 @@ require_once TEMPLATEPATH . '/inc/tax/al_genre.php';
 \* ------------------------------------------------- */
 
 require_once TEMPLATEPATH . '/inc/custom/al_portfolio.php';
+
+/* ------------------------------------------------- *\
+    @walker
+\* ------------------------------------------------- */
+
 require_once TEMPLATEPATH . '/inc/walker/al_Walker_nav_menu.php';
-
-
 
 /* ------------------------------------------------- *\
     @plugins  http://www.sitepoint.com/wordpress-options-panel/
